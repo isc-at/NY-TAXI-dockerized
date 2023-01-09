@@ -4,6 +4,24 @@ This repository includes scripts to load New York Taxi trip datasets into InterS
 
 Note: Before loading this package, please verify you're running an IRIS release of 2022.2 or above and have a license that enables Columnar Storage (either Community Edition or Advanced Server).
 
+## Setting Up with Docker
+### Prerequisites
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+
+### Installation
+Clone/git pull the repo into any local directory
+
+```
+$ git clone https://github.com/isc-at/NY-TAXI-dockerized
+```
+Open the terminal in this directory and run:
+```
+$ docker-compose build
+```
+Run the IRIS container with your project:
+```
+$ docker-compose up -d
+```
 ## Setting up with IPM
 
 1. Install the bdb-nytaxi module using [IPM](https://github.com/intersystems/ipm)
@@ -13,7 +31,6 @@ USER> zpm
 
 zpm:USER> install bdb-nytaxi
 ```
-
    This will create the handful of tables used in the demo and populate them with the contents of the `./data` folder, which has a small sample of taxi ride data and the list of taxi zones referenced in the rides data.
 
 2. Now download as many YellowCab trip data files as you'd like from the [City of New York Open Data portal](https://data.cityofnewyork.us/browse?Dataset-Information_Agency=Taxi+and+Limousine+Commission+%28TLC%29&) (use the "export" button and choose CSV). In case you're downloading the files from a different source, please make sure to verify if it has a header and the columns correspond to those in the `NYTaxi.Rides` table.
@@ -23,7 +40,6 @@ zpm:USER> install bdb-nytaxi
     ```ObjectScript
     do ##class(NYTaxi.Utils).Load("/path/to/your/download")
     ```
-
 
 ## Setting up - oldschool
 
