@@ -1,1 +1,3 @@
 .DS_Store
+data/yellow*.csv
+src/python/.ipynb_checkpoints/
