@@ -68,7 +68,9 @@ Now you can open `./src/python/demo.ipynb` in your Jupyter or Jupyter-lab instan
 
 There are several variants of the notebooks trying out different flavours of queries, but most should be self-explanatory after running through the main one. 
 
-Note that the available global buffers (your database cache) may have a significant impact on how the queries behave. The `NYTaxi.RowRides` table (with row orientation) typically requires a lot more data to be read, so performance may fall quickly if the total dataset size loaded doesn't fit your cache (which is precisely one of the pitfalls Columnar Storage tries to address). Most timings you see in the uploaded notebooks were taken when data was fully cached.
+Note that the available global buffers (your database cache) may have a significant impact on how the queries behave. The `NYTaxi.RowRides` table (with row orientation) typically requires a lot more data to be read, so performance may fall quickly if the total dataset size loaded doesn't fit your cache (which is precisely one of the pitfalls Columnar Storage tries to address). Most timings you see in the uploaded notebooks were taken when data was fully cached.   
+
+[Online Demo SMP](https://ny-taxi-dockerized.demo.community.intersystems.com/csp/sys/UtilHome.csp)  
 
 ## Feedback
 
